@@ -232,18 +232,18 @@ namespace Singularity.Apps {
         private Widget build_welcome_page() {
             var wp = new WelcomePage();
             wp.app_icon_name = "dev.sinty.demo";
-            wp.title = _("libsingularity Demo");
+            wp.title = _("Singularity Demo");
             wp.subtitle = _("Browse the sidebar to explore all available widgets.\nClick the actions below to see WelcomePage in action.");
             wp.hexpand = true;
             wp.vexpand = true;
-            wp.add_action("document-open-symbolic", "Open Documentation", "View the full libsingularity API reference", () => {
+            wp.add_action("x-office-document", "Open Documentation", "View the full libsingularity API reference", () => {
                 try {
                     AppInfo.launch_default_for_uri("https://github.com/singularityos-lab/libsingularity", null);
                 } catch (Error e) {
                     warning("Could not open URL: %s", e.message);
                 }
             });
-            wp.add_action("insert-link-symbolic", "View Source", "Browse the demo app source code on GitHub", () => {
+            wp.add_action("text-html", "View Source", "Browse the demo app source code on GitHub", () => {
                 try {
                     AppInfo.launch_default_for_uri("https://github.com/singularityos-lab/singularity-demo", null);
                 } catch (Error e) {
